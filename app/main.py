@@ -44,11 +44,11 @@ app = FastAPI(
 )
 
 # serve static files 
-static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../static"))
+static_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "static"))
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # jinja2 template engine setup
-templates_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../templates"))
+templates_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "templates"))
 templates = Jinja2Templates(directory=templates_dir)
 
 
@@ -57,7 +57,10 @@ async def home(request: Request):
     """
     render the main upload form page.
     """
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html"
+    )
 
 
 @app.post("/detect/")

@@ -4,3 +4,5 @@ numpy
 opencv_python
 ultralytics
 google-generativeai
+python-multipart
+python-dotenv
