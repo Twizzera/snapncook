@@ -40,13 +40,13 @@ snapncook/
 │   ├── image_processor.py     # Image handling logic
 │   ├── best.pt                # Trained YOLOv8 model
 │   └── .env                   # Environment variables (ignored in Git)
+|   ├── static/
+|   │   └── css/style.css          # UI styles
+|   │   └── js/script.js              # Frontend JS logic
+|   │
+|   ├── templates/
+|       └── index.html             # Main HTML page
 │
-├── static/
-│   └── css/style.css          # UI styles
-│   └── script.js              # Frontend JS logic
-│
-├── templates/
-│   └── index.html             # Main HTML page
 │
 ├── model results/             # Output images from detection
 ├── requirements.txt           # Python dependencies
